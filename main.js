@@ -4,7 +4,7 @@ var red=[0,255,0,255,0,255,128,0,128,255,255,200,150,100,50];
 var green=[0,0,0,0,255,99,33,0,255,255,255,200,150,100,50];
 var blue=[255,0,0,255,0,0,33,50,255,255,255,200,150,100,50];
 var img = document.getElementById('myImage');
-	
+}	
 img.onload = function() {
   var redDiffs=new Array(256);
   var greenDiffs=new Array(256);
@@ -37,5 +37,4 @@ img.onload = function() {
 	  totalDiffs[pos]
 	  }
   alert("done");
-}
 }
