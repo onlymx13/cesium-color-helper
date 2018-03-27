@@ -34,5 +34,5 @@ var img = document.getElementById('myImage');
   for (var pos=0;pos<256;pos++){
 	  totalDiffs[pos]
 	  }
-  alert(totalDiffs);
+  alert(totalDiffs.toString());
 }
