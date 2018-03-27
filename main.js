@@ -14,6 +14,7 @@ var img = document.createElement('img');
     });
 	
 img.onload = function() {
+	var redDiffs=[];
   var mycanvas = document.getElementById('mycanvas');
   mycanvas.width = img.width;
   mycanvas.height = img.height;
@@ -23,7 +24,7 @@ img.onload = function() {
     for(var y=1;y<=16;y++){
       var pixelData = context.getImageData(x, y, 1, 1).data;
       console.log("x="+x.toString()+" y="+y.toString()+" pD="+pixelData.toString());
-	  var redDiffs[16x+y-16]=red.map( function(value){
+	  redDiffs[16x+y-16]=red.map( function(value){
 		  return value-pixelData[0];
 	  });
     }
