@@ -17,13 +17,13 @@ var img = document.getElementById('myImage');
       var pixelData = context.getImageData(x, y, 1, 1).data;
       document.getElementById("output").innerHTML="x="+x.toString()+" y="+y.toString()+" pD="+pixelData.toString();
 	  redDiffs[16*x+y-17]=red.map( function(value){
-		  return value-pixelData[0];
+		  return Math.abs(value-pixelData[0]);
 	  });
 	  greenDiffs[16*x+y-17]=green.map( function(value) {
-		 return value-pixelData[1]; 
+		  return Math.abs(value-pixelData[1]); 
 	  });
 	  blueDiffs[16*x+y-17]=blue.map( function(value) {
-		  return value-pixelData[2];
+		  return Math.abs(value-pixelData[2]);
 	  });
     }
   }
