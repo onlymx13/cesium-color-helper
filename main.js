@@ -43,7 +43,7 @@ img.onload = function() {
   for(var pos=0;pos<256;pos++) {
   totalDiffs[pos]=redDiffs[pos]+greenDiffs[pos]+blueDiffs[pos];
 	  }
-  for (var pos=0;pos<256,pos++){
+  for (var pos=0;pos<256;pos++){
 	  totalDiffs[pos]
 	  }
   alert("done");
