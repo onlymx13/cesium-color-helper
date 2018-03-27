@@ -39,9 +39,9 @@ img.onload = function() {
 	  });
     }
   }
-  var totalDiffs=redDiffs.map( function(value) {
-	  
-  });
-  redDiffs+greenDiffs+blueDiffs
+  var totalDiffs=new Array(256);
+  for(var pos=0;pos<256;pos++) {
+  totalDiffs[pos]=redDiffs[pos]+greenDiffs[pos]+blueDiffs[pos];
+	  }
   alert("done");
 }
