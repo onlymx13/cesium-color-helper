@@ -16,7 +16,9 @@ var img = document.createElement('img');
 	
 img.onload = function() {
   var redDiffs=[];
+  redDiffs.length=256;
   var greenDiffs=[];
+  greenDiffs.length=256;
   var mycanvas = document.getElementById('mycanvas');
   mycanvas.width = img.width;
   mycanvas.height = img.height;
