@@ -1,6 +1,7 @@
 var colorStrings=["BLUE","RED","BLACK","MAGENTA","GREEN","ORANGE","BROWN","NAVY","LTBLUE","YELLOW","WHITE","LTGRAY","MEDGRAY","GRAY","DARKGRAY"];
 var red=[0,255,0,255,0,255,128,0,128,255,255,200,150,100,50];
 var green=[0,0,0,0,255,99,33,0,255,255,255,200,150,100,50];
+var blue=[255,0,0,255,0,0,33,50,255,255,255,200,150,100,50];
 var img = document.getElementById('myImage');
 
 var img = document.createElement('img');
@@ -17,6 +18,7 @@ var img = document.createElement('img');
 img.onload = function() {
   var redDiffs=new Array(256);
   var greenDiffs=new Array(256);
+  var blueDiffs=new Array(256);
   var mycanvas = document.getElementById('mycanvas');
   mycanvas.width = img.width;
   mycanvas.height = img.height;
@@ -32,6 +34,14 @@ img.onload = function() {
 	  greenDiffs[16*x+y-17]=green.map( function(value) {
 		 return value-pixelData[1]; 
 	  });
+	  blueDiffs[16*x+y-17]=blue.map( function(value) {
+		  return value-pixelData[2];
+	  });
     }
   }
+  var totalDiffs=redDiffs.map( function(value) {
+	  
+  });
+  redDiffs+greenDiffs+blueDiffs
+  alert("done");
 }
