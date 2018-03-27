@@ -1,5 +1,6 @@
 var main=function(){
 var colorStrings=["BLUE","RED","BLACK","MAGENTA","GREEN","ORANGE","BROWN","NAVY","LTBLUE","YELLOW","WHITE","LTGRAY","MEDGRAY","GRAY","DARKGRAY"];
+var colorChars=["1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
 var red=[0,255,0,255,0,255,128,0,128,255,255,200,150,100,50];
 var green=[0,0,0,0,255,99,33,0,255,255,255,200,150,100,50];
 var blue=[255,0,0,255,0,0,33,50,255,255,255,200,150,100,50];
@@ -29,10 +30,12 @@ var img = document.getElementById('myImage');
   }
   var totalDiffs=new Array(256);
   for(var pos=0;pos<256;pos++) {
-  totalDiffs[pos]=redDiffs[pos]+greenDiffs[pos]+blueDiffs[pos];
+	  for(var pos2=0;pos2<16;pos2++){
+  totalDiffs[pos][pos2]=redDiffs[pos][pos2]+greenDiffs[pos][pos2]+blueDiffs[pos][pos2];
 	  }
+  }
   for (var pos=0;pos<256;pos++){
 	  totalDiffs[pos]
 	  }
-  alert(totalDiffs.toString());
+  alert(totalDiffs.toString());	
 }
