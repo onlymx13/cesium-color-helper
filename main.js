@@ -1,4 +1,4 @@
-window.onload=function(){
+document.onload=function(){
 var colorStrings=["BLUE","RED","BLACK","MAGENTA","GREEN","ORANGE","BROWN","NAVY","LTBLUE","YELLOW","WHITE","LTGRAY","MEDGRAY","GRAY","DARKGRAY"];
 var red=[0,255,0,255,0,255,128,0,128,255,255,200,150,100,50];
 var green=[0,0,0,0,255,99,33,0,255,255,255,200,150,100,50];
