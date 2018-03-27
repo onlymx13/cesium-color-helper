@@ -26,10 +26,10 @@ img.onload = function() {
     for(var y=1;y<=16;y++){
       var pixelData = context.getImageData(x, y, 1, 1).data;
       console.log("x="+x.toString()+" y="+y.toString()+" pD="+pixelData.toString());
-	  redDiffs[16x+y-16]=red.map( function(value){
+	  redDiffs[16*x+y-16]=red.map( function(value){
 		  return value-pixelData[0];
 	  });
-	  greenDiffs[16x+y-16]=green.map( function(value) {
+	  greenDiffs[16*x+y-16]=green.map( function(value) {
 		 return value-pixelData[1]; 
 	  });
     }
