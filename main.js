@@ -29,6 +29,7 @@ var img = document.getElementById('myImage');
     }
   }
   var totalDiffs=new Array(256);
+  totalDiffs.fill([]);
   for(var pos=0;pos<256;pos++) {
 	  for(var pos2=0;pos2<16;pos2++){
   totalDiffs[pos][pos2]=redDiffs[pos][pos2]+greenDiffs[pos][pos2]+blueDiffs[pos][pos2];
