@@ -23,7 +23,9 @@ img.onload = function() {
     for(var y=1;y<=16;y++){
       var pixelData = context.getImageData(x, y, 1, 1).data;
       console.log("x="+x.toString()+" y="+y.toString()+" pD="+pixelData.toString());
-	  red-pixelData[0]
+	  var redDiffs[16x+y-16]=red.map( function(value){
+		  return value-pixelData[0];
+	  });
     }
   }
 }
