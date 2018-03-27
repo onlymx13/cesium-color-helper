@@ -21,13 +21,13 @@ img.onload = function() {
   var blueDiffs=new Array(256);
   var mycanvas = document.getElementById('mycanvas');
   mycanvas.width = img.width;
-  mycanvas.height = img.height;
+  mycanvas.height = img.height
   var context = mycanvas.getContext('2d');
   context.drawImage(img, 0, 0, img.width, img.height);
   for(var x=1;x<=16;x++){
     for(var y=1;y<=16;y++){
       var pixelData = context.getImageData(x, y, 1, 1).data;
-      console.log("x="+x.toString()+" y="+y.toString()+" pD="+pixelData.toString());
+      document.getElementById("output").innerHTML="x="+x.toString()+" y="+y.toString()+" pD="+pixelData.toString();
 	  redDiffs[16*x+y-17]=red.map( function(value){
 		  return value-pixelData[0];
 	  });
