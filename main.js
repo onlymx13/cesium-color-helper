@@ -4,10 +4,10 @@ var add3Arrays=function(array1,array2,array3){
 	return null;
 	}
 	var sum=new Array(array1.length());
-for(var i=0;i<array1.length());i++){
+for(var i=0;i<array1.length();i++){
 	sum[i]=array1[i]+array2[i];
 }
-for(i=0;i<array3.length());i++){
+for(i=0;i<array3.length();i++){
 	sum[i]=sum[i]+array3[i];
 }
 }
