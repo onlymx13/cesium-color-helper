@@ -1,8 +1,5 @@
 var main=function(){
 var add3Arrays=function(array1,array2,array3){
-	if(array1.length+array2.length+array3.length!=3*array1.length){
-	return null;
-	}
 	var sum=new Array(array1.length);
 for(var i=0;i<array1.length;i++){
 	sum[i]=array1[i]+array2[i];
