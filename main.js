@@ -35,9 +35,9 @@ for(var xInPic=1;xInPic<=16;xInPic++){
 	for(var yInPic=1;yInPic<=16;yInPic++){
 		var pixelData = context.getImageData(xInPic, yInPic, 1, 1).data;
 		//Now do red-ri:
-		var redDiffs=Math.abs(red.map(x => x-pixelData[0]));
-		var greenDiffs=Math.abs(green.map(x => x-pixelData[1]));
-		var blueDiffs=Math.abs(blue.map(x => x-pixelData[2]));
+		var redDiffs=red.map(x => Math.abs(x-pixelData[0]));
+		var greenDiffs=green.map(x => Math.abs(x-pixelData[1]));
+		var blueDiffs=blue.map(x => Math.abs(x-pixelData[2]));
 		var totalDiffs=add3Arrays(redDiffs,greenDiffs,blueDiffs);
 		outputString=outputString+colorChars[totalDiffs.indexOf(totalDiffs.min)];
 		
