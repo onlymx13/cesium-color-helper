@@ -12,6 +12,9 @@ for(i=0;i<array3.length;i++){
 Array.min = function( array ){
     return Math.min.apply( Math, array );
 };
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
 var colorStrings=["BLUE","RED","BLACK","MAGENTA","GREEN","ORANGE","BROWN","NAVY","LTBLUE","YELLOW","WHITE","LTGRAY","MEDGRAY","GRAY","DARKGRAY"];
 var colorChars=["1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
 var outputString="";
@@ -40,5 +43,5 @@ for(var xInPic=1;xInPic<=16;xInPic++){
 		outputString=outputString+colorChars[totalDiffs.indexOf(Math.min(...totalDiffs))];
 		
 }	}
-document.getElementById("output").innerHTML=outputString;
+document.getElementById("output").innerHTML=reverseString(outputString);
 }
