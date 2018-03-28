@@ -7,6 +7,7 @@ for(var i=0;i<array1.length;i++){
 for(i=0;i<array3.length;i++){
 	sum[i]=sum[i]+array3[i];
 }
+	return sum;
 }
 Array.min = function( array ){
     return Math.min.apply( Math, array );
