@@ -1,13 +1,13 @@
 var main=function(){
 var add3Arrays=function(array1,array2,array3){
-	if(length(array1)+length(array2)+length(array3)!=3*length(array1)){
+	if(array1.length()+array2.length()+array3.length()!=3*array1.length()){
 	return null;
 	}
-	var sum=new Array(length(array1));
-for(var i=0;i<length(array1);i++){
+	var sum=new Array(array1.length());
+for(var i=0;i<array1.length());i++){
 	sum[i]=array1[i]+array2[i];
 }
-for(i=0;i<length(array3);i++){
+for(i=0;i<array3.length());i++){
 	sum[i]=sum[i]+array3[i];
 }
 }
