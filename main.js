@@ -37,7 +37,7 @@ for(var xInPic=1;xInPic<=16;xInPic++){
 		var greenDiffs=green.map(x => Math.abs(x-pixelData[1]));
 		var blueDiffs=blue.map(x => Math.abs(x-pixelData[2]));
 		var totalDiffs=add3Arrays(redDiffs,greenDiffs,blueDiffs);
-		outputString=outputString+colorChars[totalDiffs.indexOf(totalDiffs.min)];
+		outputString=outputString+colorChars[totalDiffs.indexOf(Math.min(totalDiffs))];
 		
 }	}
 document.getElementById("output").innerHTML=outputString;
