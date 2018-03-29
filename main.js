@@ -44,7 +44,7 @@ for(var xInPic=1;xInPic<=16;xInPic++){
 		
 }	}
 var outputArray=outputString.match(/.{1,16}/g).reverse();
-var rotateArray()=function(array){
+var rotateArray=function(array){
 var newOutputArray=new Array(16);
 var substr=function(str,pos){
 return str.match(/./g)[pos];	
