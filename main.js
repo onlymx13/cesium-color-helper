@@ -19,8 +19,8 @@ var colorStrings=["BLUE","RED","BLACK","MAGENTA","GREEN","ORANGE","BROWN","NAVY"
 var colorChars=["1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
 for (var i=0;i<16;i++){
 var div=document.createElement("div");
-div.width=100px;
-div.height=50px;
+div.width=100;
+div.height=50;
 div.backgroundColor=rgb(red[i],green[i],blue[i]);
 div.innerHTML=colorStrings[i];
 }
