@@ -25,6 +25,8 @@ var div=document.createElement("div");
 div.style.width="100px";
 div.style.height="50px";
 div.style.backgroundColor="rgb("+red[i].toString()+","+green[i].toString()+","+blue[i].toString()+")";
+div.style.display="inline";
+div.style.visibility="visible";
 div.innerHTML=colorStrings[i];
 }
 var outputString="";
