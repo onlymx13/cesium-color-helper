@@ -29,7 +29,7 @@ div.style.display="inline";
 div.style.visibility="visible";
 div.innerHTML=colorStrings[i];
 }
-var file=function(){
+var fileChange=function(){
 var file=document.querySelector('input[type=file]').files[0];
 var reader=new FileReader();
 reader.addEventListener("load", function () {
