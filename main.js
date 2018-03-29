@@ -43,5 +43,5 @@ for(var xInPic=1;xInPic<=16;xInPic++){
 		outputString=outputString+colorChars[totalDiffs.indexOf(Math.min(...totalDiffs))];
 		
 }	}
-document.getElementById("output").innerHTML=reverseString(outputString);
+document.getElementById("output").innerHTML=outputString.match(/.{1,16}/g).reverse().join("");
 }
