@@ -54,5 +54,5 @@ for(var i=0;i<16;i++){
 }
 return newOutputArray;
 }
-document.getElementById("output").innerHTML=rotateArray(outputArray).reverse().join("");
+document.getElementById("output").innerHTML=rotateArray(outputArray).join("");
 }
