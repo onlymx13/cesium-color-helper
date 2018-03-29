@@ -21,7 +21,7 @@ for (var i=0;i<16;i++){
 var div=document.createElement("div");
 div.width=100;
 div.height=50;
-div.backgroundColor=rgb(red[i],green[i],blue[i]);
+div.setAttribute("background-color",rgb(red[i],green[i],blue[i]));
 div.innerHTML=colorStrings[i];
 }
 var outputString="";
