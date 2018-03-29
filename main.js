@@ -55,7 +55,7 @@ for(var i=0;i<16;i++){
 return newOutputArray;
 }
 var reverseArray=function(array){
-return [array[0].reverse(),array[1].reverse(),array[2].reverse(),array[3].reverse(),array[4].reverse(),array[5].reverse(),array[6].reverse(),array[7].reverse(),array[8].reverse(),array[9].reverse(),array[10].reverse(),array[11].reverse(),array[12].reverse(),array[13].reverse(),array[14].reverse(),array[15].reverse()];
+return [array[0].reverse,array[1].reverse,array[2].reverse,array[3].reverse,array[4].reverse,array[5].reverse,array[6].reverse,array[7].reverse,array[8].reverse,array[9].reverse,array[10].reverse,array[11].reverse,array[12].reverse,array[13].reverse,array[14].reverse,array[15].reverse];
 }
 document.getElementById("output").innerHTML=(reverseArray(rotateArray(outputArray))).join("");
 }
