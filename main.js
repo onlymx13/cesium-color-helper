@@ -44,12 +44,15 @@ for(var xInPic=1;xInPic<=16;xInPic++){
 		
 }	}
 var outputArray=outputString.match(/.{1,16}/g).reverse();
+var rotateArray(array)=function(){
 var newOutputArray=new Array(16);
 var substr=function(str,pos){
 return str.match(/./g)[pos];	
 }
 for(var i=0;i<16;i++){
-	newOutputArray[i]=substr(outputArray[0],i)+substr(outputArray[1],i)+substr(outputArray[2],i)+substr(outputArray[3],i)+substr(outputArray[4],i)+substr(outputArray[5],i)+substr(outputArray[6],i)+substr(outputArray[7],i)+substr(outputArray[8],i)+substr(outputArray[9],i)+substr(outputArray[10],i)+substr(outputArray[11],i)+substr(outputArray[12],i)+substr(outputArray[13],i)+substr(outputArray[14],i)+substr(outputArray[15],i);
+	newOutputArray[i]=substr(array[0],i)+substr(array[1],i)+substr(array[2],i)+substr(array[3],i)+substr(array[4],i)+substr(array[5],i)+substr(array[6],i)+substr(array[7],i)+substr(array[8],i)+substr(array[9],i)+substr(array[10],i)+substr(array[11],i)+substr(array[12],i)+substr(array[13],i)+substr(array[14],i)+substr(array[15],i);
 }
-document.getElementById("output").innerHTML=newOutputArray.reverse().join("");
+return newOutputArray;
+}
+document.getElementById("output").innerHTML=rotateArray(rotateArray(rotateArray(outputArray))).reverse().join("");
 }
