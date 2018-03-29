@@ -12,7 +12,7 @@ for(i=0;i<array3.length;i++){
 Array.min = function( array ){
     return Math.min.apply( Math, array );
 };
-String.reverse=function(str) {
+var reverse=function(str) {
     return str.split("").reverse().join("");
 }
 var colorStrings=["BLUE","RED","BLACK","MAGENTA","GREEN","ORANGE","BROWN","NAVY","LTBLUE","YELLOW","WHITE","LTGRAY","MEDGRAY","GRAY","DARKGRAY"];
@@ -55,7 +55,7 @@ for(var i=0;i<16;i++){
 return newOutputArray;
 }
 var reverseArray=function(array){
-return [array[0].reverse,array[1].reverse,array[2].reverse,array[3].reverse,array[4].reverse,array[5].reverse,array[6].reverse,array[7].reverse,array[8].reverse,array[9].reverse,array[10].reverse,array[11].reverse,array[12].reverse,array[13].reverse,array[14].reverse,array[15].reverse];
+return [reverse(array[0]),reverse(array[1]),reverse(array[2]),reverse(array[3]),reverse(array[4]),reverse(array[5]),reverse(array[6]),reverse(array[7]),reverse(array[8]),reverse(array[9]),reverse(array[10]),reverse(array[11]),reverse(array[12]),reverse(array[13]),reverse(array[14]),reverse(array[15])];
 }
 document.getElementById("output").innerHTML=(reverseArray(rotateArray(outputArray))).join("");
 }
