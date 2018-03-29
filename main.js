@@ -29,6 +29,7 @@ div.style.display="inline";
 div.style.visibility="visible";
 div.innerHTML=colorStrings[i];
 }
+var file=function(){
 var file=document.querySelector('input[type=file]').files[0];
 var reader=new FileReader();
 reader.addEventListener("load", function () {
@@ -76,4 +77,5 @@ var reverseArray=function(array){
 return [reverse(array[0]),reverse(array[1]),reverse(array[2]),reverse(array[3]),reverse(array[4]),reverse(array[5]),reverse(array[6]),reverse(array[7]),reverse(array[8]),reverse(array[9]),reverse(array[10]),reverse(array[11]),reverse(array[12]),reverse(array[13]),reverse(array[14]),reverse(array[15])];
 }
 document.getElementById("output").innerHTML=(reverseArray(rotateArray(outputArray))).join("");
+}
 }
