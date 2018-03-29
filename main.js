@@ -17,6 +17,13 @@ var reverse=function(str) {
 }
 var colorStrings=["BLUE","RED","BLACK","MAGENTA","GREEN","ORANGE","BROWN","NAVY","LTBLUE","YELLOW","WHITE","LTGRAY","MEDGRAY","GRAY","DARKGRAY"];
 var colorChars=["1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+for (var i=0;i<16;i++){
+var div=document.createElement("div");
+div.width=100px;
+div.height=50px;
+div.backgroundColor=rgb(red[i],green[i],blue[i]);
+div.innerHTML=colorStrings[i];
+}
 var outputString="";
 var red=[0,255,0,255,0,255,128,0,128,255,255,200,150,50,50];
 var green=[0,0,0,0,255,99,33,0,255,255,255,200,150,0,50];
