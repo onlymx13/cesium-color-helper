@@ -16,9 +16,9 @@ var reverse=function(str) {
     return str.split("").reverse().join("");
 }
 var colorStrings=["BLUE","RED","BLACK","MAGENTA","GREEN","ORANGE","BROWN","NAVY","LTBLUE","YELLOW","WHITE","LTGRAY","MEDGRAY","GRAY","DARKGRAY"];
-const red=[0,255,0,255,0,255,128,0,128,255,255,200,150,50,50];
-const green=[0,0,0,0,255,99,33,0,255,255,255,200,150,0,50];
-const blue=[255,0,0,255,0,0,33,50,255,0,255,200,150,50,50];
+const red=[0,255,0,255,0,255,182,0,128,255,255,225,200,150,100];
+const green=[0,0,0,0,221,133,47,0,255,255,255,225,200,150,100];
+const blue=[255,0,0,255,0,51,47,102,255,0,255,225,200,150,100];
 var colorChars=["1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
 for (var i=0;i<15;i++){
 var div=document.getElementById("div"+(i+1).toString());
