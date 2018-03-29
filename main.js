@@ -22,8 +22,8 @@ const blue=[255,0,0,255,0,0,33,50,255,0,255,200,150,50,50];
 var colorChars=["1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
 for (var i=0;i<15;i++){
 var div=document.createElement("div");
-div.width=100;
-div.height=50;
+div.style.width="100px";
+div.style.height="50px";
 div.style.backgroundColor="rgb("+red[i].toString()+","+green[i].toString()+","+blue[i].toString()+")";
 div.innerHTML=colorStrings[i];
 }
