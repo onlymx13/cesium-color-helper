@@ -29,8 +29,17 @@ div.style.display="inline";
 div.style.visibility="visible";
 div.innerHTML=colorStrings[i];
 }
+var file=document.querySelector('input[type=file]').files[0];
+var reader=new FileReader();
+reader.addEventListener("load", function () {
+var img=document.getElementById('myImage');
+img.src=reader.result;
+  }, false);
+if (file) {
+    reader.readAsDataURL(file);
+  }
 var outputString="";
-var img = document.getElementById('myImage');
+//var img = document.getElementById('myImage');
 var redDiffs=new Array(256);
 var greenDiffs=new Array(256);
 var blueDiffs=new Array(256);
