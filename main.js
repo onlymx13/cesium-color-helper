@@ -12,7 +12,7 @@ for(i=0;i<array3.length;i++){
 Array.min = function( array ){
     return Math.min.apply( Math, array );
 };
-function reverseString(str) {
+String.reverse=function(str) {
     return str.split("").reverse().join("");
 }
 var colorStrings=["BLUE","RED","BLACK","MAGENTA","GREEN","ORANGE","BROWN","NAVY","LTBLUE","YELLOW","WHITE","LTGRAY","MEDGRAY","GRAY","DARKGRAY"];
