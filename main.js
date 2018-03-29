@@ -43,5 +43,13 @@ for(var xInPic=1;xInPic<=16;xInPic++){
 		outputString=outputString+colorChars[totalDiffs.indexOf(Math.min(...totalDiffs))];
 		
 }	}
-document.getElementById("output").innerHTML=outputString.match(/.{1,16}/g).reverse().join("");
+var outputArray=outputString.match(/.{1,16}/g).reverse();
+var newOutputArray=new Array(16);
+var substr=function(str,pos){
+return str.match(/./g)[pos];	
+}
+for(var i=0;i<16;i++){
+	newOutputArray[i]=substr(outputArray[0],i)+substr(outputArray[1],i)+substr(outputArray[2],i)+substr(outputArray[3],i)+substr(outputArray[4],i)+substr(outputArray[5],i)+substr(outputArray[6],i)+substr(outputArray[7],i)+substr(outputArray[8],i)+substr(outputArray[9],i)+substr(outputArray[10],i)+substr(outputArray[11],i)+substr(outputArray[12],i)+substr(outputArray[13],i)+substr(outputArray[14],i)+substr(outputArray[15],i);
+}
+document.getElementById("output").innerHTML=outputArray.join("");
 }
