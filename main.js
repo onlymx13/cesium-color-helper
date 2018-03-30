@@ -22,6 +22,16 @@ var colorChars=["1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
 var reverseArray=function(array){
 return [reverse(array[0]),reverse(array[1]),reverse(array[2]),reverse(array[3]),reverse(array[4]),reverse(array[5]),reverse(array[6]),reverse(array[7]),reverse(array[8]),reverse(array[9]),reverse(array[10]),reverse(array[11]),reverse(array[12]),reverse(array[13]),reverse(array[14]),reverse(array[15])];
 }
+var rotateArray=function(array){
+var newOutputArray=new Array(16);
+var substr=function(str,pos){
+return str.match(/./g)[pos];	
+}
+for(var i=0;i<16;i++){
+	newOutputArray[i]=substr(array[0],i)+substr(array[1],i)+substr(array[2],i)+substr(array[3],i)+substr(array[4],i)+substr(array[5],i)+substr(array[6],i)+substr(array[7],i)+substr(array[8],i)+substr(array[9],i)+substr(array[10],i)+substr(array[11],i)+substr(array[12],i)+substr(array[13],i)+substr(array[14],i)+substr(array[15],i);
+}
+return newOutputArray;
+}
 var setup=function(){
 for (var i=0;i<15;i++){
 var div=document.getElementById("div"+(i+1).toString());
@@ -67,16 +77,6 @@ for(var xInPic=1;xInPic<=16;xInPic++){
 		
 }	}
 var outputArray=outputString.match(/.{1,16}/g).reverse();
-var rotateArray=function(array){
-var newOutputArray=new Array(16);
-var substr=function(str,pos){
-return str.match(/./g)[pos];	
-}
-for(var i=0;i<16;i++){
-	newOutputArray[i]=substr(array[0],i)+substr(array[1],i)+substr(array[2],i)+substr(array[3],i)+substr(array[4],i)+substr(array[5],i)+substr(array[6],i)+substr(array[7],i)+substr(array[8],i)+substr(array[9],i)+substr(array[10],i)+substr(array[11],i)+substr(array[12],i)+substr(array[13],i)+substr(array[14],i)+substr(array[15],i);
-}
-return newOutputArray;
-}
 document.getElementById("output").innerHTML=':DCS\n"'+(reverseArray(rotateArray(outputArray))).join("");
 },false);
 }
