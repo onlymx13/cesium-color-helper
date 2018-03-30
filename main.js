@@ -1,3 +1,4 @@
+var setup=function(){
 var add3Arrays=function(array1,array2,array3){
 	var sum=new Array(array1.length);
 for(var i=0;i<array1.length;i++){
@@ -27,6 +28,7 @@ div.style.backgroundColor="rgb("+red[i].toString()+","+green[i].toString()+","+b
 div.style.display="inline";
 div.style.visibility="visible";
 div.innerHTML=colorStrings[i];
+}
 }
 var main=function(){
 var file=document.querySelector('input[type=file]').files[0];
