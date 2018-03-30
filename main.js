@@ -77,6 +77,7 @@ for(var xInPic=1;xInPic<=16;xInPic++){
 		
 }	}
 var outputArray=outputString.match(/.{1,16}/g).reverse();
-document.getElementById("output").innerHTML=':DCS<br>"'+(reverseArray(rotateArray(outputArray))).join("");
+document.getElementById("output").innerHTML=':DCS\
+"'+(reverseArray(rotateArray(outputArray))).join("");
 },false);
 }
