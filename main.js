@@ -1,4 +1,6 @@
+var done=false;
 var setup=function(){
+done=true;
 var add3Arrays=function(array1,array2,array3){
 	var sum=new Array(array1.length);
 for(var i=0;i<array1.length;i++){
@@ -31,6 +33,9 @@ div.innerHTML=colorStrings[i];
 }
 }
 var main=function(){
+if(!done){
+	setup();
+}
 var file=document.querySelector('input[type=file]').files[0];
 var reader=new FileReader();
 var img=document.getElementById('myImage');
