@@ -1,4 +1,3 @@
-var main=function(){
 var add3Arrays=function(array1,array2,array3){
 	var sum=new Array(array1.length);
 for(var i=0;i<array1.length;i++){
@@ -15,11 +14,12 @@ Array.min = function( array ){
 var reverse=function(str) {
     return str.split("").reverse().join("");
 }
-var colorStrings=["BLUE","RED","BLACK","MAGENTA","GREEN","ORANGE","BROWN","NAVY","LTBLUE","YELLOW","WHITE","LTGRAY","MEDGRAY","GRAY","DARKGRAY"];
+const colorStrings=["BLUE","RED","BLACK","MAGENTA","GREEN","ORANGE","BROWN","NAVY","LTBLUE","YELLOW","WHITE","LTGRAY","MEDGRAY","GRAY","DARKGRAY"];
 const red=[0,255,0,255,0,255,182,0,128,255,255,225,200,150,100];
 const green=[0,0,0,0,221,133,47,0,255,255,255,225,200,150,100];
 const blue=[255,0,0,255,0,51,47,102,255,0,255,225,200,150,100];
-var colorChars=["1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+const colorChars=["1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+var main=function(){
 for (var i=0;i<15;i++){
 var div=document.getElementById("div"+(i+1).toString());
 div.style.width="100px";
@@ -29,8 +29,6 @@ div.style.display="inline";
 div.style.visibility="visible";
 div.innerHTML=colorStrings[i];
 }
-}
-var fileChange=function(){
 var file=document.querySelector('input[type=file]').files[0];
 var reader=new FileReader();
 reader.addEventListener("load", function () {
