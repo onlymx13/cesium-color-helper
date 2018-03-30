@@ -17,11 +17,11 @@ Array.min = function( array ){
 var reverse=function(str) {
     return str.split("").reverse().join("");
 }
-const colorStrings=["BLUE","RED","BLACK","MAGENTA","GREEN","ORANGE","BROWN","NAVY","LTBLUE","YELLOW","WHITE","LTGRAY","MEDGRAY","GRAY","DARKGRAY"];
-const red=[0,255,0,255,0,255,182,0,128,255,255,225,200,150,100];
-const green=[0,0,0,0,221,133,47,0,255,255,255,225,200,150,100];
-const blue=[255,0,0,255,0,51,47,102,255,0,255,225,200,150,100];
-const colorChars=["1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+var colorStrings=["BLUE","RED","BLACK","MAGENTA","GREEN","ORANGE","BROWN","NAVY","LTBLUE","YELLOW","WHITE","LTGRAY","MEDGRAY","GRAY","DARKGRAY"];
+var red=[0,255,0,255,0,255,182,0,128,255,255,225,200,150,100];
+var green=[0,0,0,0,221,133,47,0,255,255,255,225,200,150,100];
+var blue=[255,0,0,255,0,51,47,102,255,0,255,225,200,150,100];
+var colorChars=["1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
 for (var i=0;i<15;i++){
 var div=document.getElementById("div"+(i+1).toString());
 div.style.width="100px";
