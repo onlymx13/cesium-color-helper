@@ -39,6 +39,7 @@ img.src=reader.result;
 if (file) {
     reader.readAsDataURL(file);
   }
+img.addEventListener("load",function(){
 var outputString="";
 //var img = document.getElementById('myImage');
 var redDiffs=new Array(256);
@@ -78,3 +79,4 @@ return [reverse(array[0]),reverse(array[1]),reverse(array[2]),reverse(array[3]),
 }
 document.getElementById("output").innerHTML=(reverseArray(rotateArray(outputArray))).join("");
 }
+},false);
