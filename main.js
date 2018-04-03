@@ -14,11 +14,11 @@ Array.min = function( array ){
 var reverse=function(str) {
     return str.split("").reverse().join("");
 }
-var colorStrings=["BLUE","RED","BLACK","MAGENTA","GREEN","ORANGE","BROWN","NAVY","LTBLUE","YELLOW","WHITE","LTGRAY","MEDGRAY","GRAY","DARKGRAY"];
-var red=[0,255,0,255,0,255,182,0,128,255,255,225,200,150,100];
-var green=[0,0,0,0,221,133,47,0,255,255,255,225,200,150,100];
-var blue=[255,0,0,255,0,51,47,102,255,0,255,225,200,150,100];
-var colorChars=["1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+var colorStrings=["WHITE","BLUE","RED","BLACK","MAGENTA","GREEN","ORANGE","BROWN","NAVY","LTBLUE","YELLOW","WHITE","LTGRAY","MEDGRAY","GRAY","DARKGRAY","G","BLACK(H)","I","J","K","L","M","N"];
+var red = [255,0,255,0,255,0,255,182,0,128,255,255,225,200,150,100,57,0,0,214,181,41,57,41];
+var green=[255,0,0,0,0,221,133,47,0,255,255,255,225,200,150,100,65,0,162,24,243,0,32,65];
+var blue =[255,255,0,0,255,0,51,47,102,255,0,255,225,200,150,100,214,0,41,132,189,66,206,82];
+var colorChars=["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","H","I","J","K","L","M","N"];
 var reverseArray=function(array){
 return [reverse(array[0]),reverse(array[1]),reverse(array[2]),reverse(array[3]),reverse(array[4]),reverse(array[5]),reverse(array[6]),reverse(array[7]),reverse(array[8]),reverse(array[9]),reverse(array[10]),reverse(array[11]),reverse(array[12]),reverse(array[13]),reverse(array[14]),reverse(array[15])];
 }
