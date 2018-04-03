@@ -1,4 +1,4 @@
-var add3Arrays=function(array1,array2,array3){
+ var add3Arrays=function(array1,array2,array3){
 	var sum=new Array(array1.length);
 for(var i=0;i<array1.length;i++){
 	sum[i]=array1[i]+array2[i];
@@ -33,7 +33,7 @@ for(var i=0;i<16;i++){
 return newOutputArray;
 }
 var setup=function(){
-for (var i=0;i<15;i++){
+for (var i=0;i<colorChars.length;i++){
 var div=document.getElementById("div"+(i+1).toString());
 div.style.width="100px";
 div.style.height="50px";
