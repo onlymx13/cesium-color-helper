@@ -54,7 +54,6 @@ if (file) {
   }
 img.addEventListener("load",function(){
 var outputString="";
-//var img = document.getElementById('myImage');
 var redDiffs=new Array(256);
 var greenDiffs=new Array(256);
 var blueDiffs=new Array(256);
@@ -75,8 +74,22 @@ for(var xInPic=1;xInPic<=16;xInPic++){
 		var totalDiffs=add3Arrays(redDiffs,greenDiffs,blueDiffs);
 		outputString=outputString+colorChars[totalDiffs.indexOf(Math.min(...totalDiffs))];
 		
-}	}
+}}
 var outputArray=outputString.match(/.{1,16}/g).reverse();
-document.getElementById("output").innerHTML=':DCS<br>"'+(reverseArray(rotateArray(outputArray))).join("");
+var output=(reverseArray(rotateArray(outputArray))).join("");
+document.getElementById("output").innerHTML=':DCS<br>"'+output;
+var outputCanvas=document.getElementById('outputcanvas');
+outputCanvas.width=16;
+outputCanvas.height=16;
+var sub;
+var data=outputCanvas.getContext('2d').getImageData(0,0,outputCanvas.width,outputCanvas.height).data;
+for(yInPic=1;yInPic<=16;yInPic++){
+for(xInPic=1;xInPic<=16;xInPic++){
+sub=output.substring(16*yInPic+xInPic-17,16*yInPic+xInPic-16);
+data[4(16*yInPic+xInPic-17)-4]=red[colorChars.indexOf(sub)];
+data[4(16*yInPic+xInPic-17)-3]=green[colorChars.indexOf(sub)];
+data[4(16*yInPic+xInPic-17)-2]=blue[colorChars.indexOf(sub)];
+outputCanvas.getContext('2d').putImageData(,xInPic,yInPic);
+}}
 },false);
 }
