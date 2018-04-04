@@ -79,17 +79,16 @@ var outputArray=outputString.match(/.{1,16}/g).reverse();
 var output=(reverseArray(rotateArray(outputArray))).join("");
 document.getElementById("output").innerHTML=':DCS<br>"'+output;
 var outputCanvas=document.getElementById('outputcanvas');
-outputCanvas.width=16;
-outputCanvas.height=16;
+var ctx=outputCanvas.getContext('2d');
 var sub;
-var data=outputCanvas.getContext('2d').getImageData(0,0,outputCanvas.width,outputCanvas.height).data;
+var data=ctx.getImageData(0,0,outputCanvas.width,outputCanvas.height).data;
 for(yInPic=1;yInPic<=16;yInPic++){
 for(xInPic=1;xInPic<=16;xInPic++){
 sub=output.substring(16*yInPic+xInPic-17,16*yInPic+xInPic-16);
-data[4*(16*yInPic+xInPic-17)-4]=red[colorChars.indexOf(sub)];
-data[4*(16*yInPic+xInPic-17)-3]=green[colorChars.indexOf(sub)];
-data[4*(16*yInPic+xInPic-17)-2]=blue[colorChars.indexOf(sub)];
-outputCanvas.getContext('2d').putImageData(outputCanvas.getContext('2d').getImageData(0,0,outputCanvas.width,outputCanvas.height),xInPic,yInPic);
+data[4*(16*yInPic+xInPic-17)]=red[colorChars.indexOf(sub)];
+data[4*(16*yInPic+xInPic-17)+1]=green[colorChars.indexOf(sub)];
+data[4*(16*yInPic+xInPic-17)+2]=blue[colorChars.indexOf(sub)];
 }}
+ctx.putImageData(ctx.getImageData(0,0,outputCanvas.width,outputCanvas.height),0,0);
 },false);
 }
