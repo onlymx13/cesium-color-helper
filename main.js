@@ -89,7 +89,7 @@ sub=output.substring(16*yInPic+xInPic-17,16*yInPic+xInPic-16);
 data[4(16*yInPic+xInPic-17)-4]=red[colorChars.indexOf(sub)];
 data[4(16*yInPic+xInPic-17)-3]=green[colorChars.indexOf(sub)];
 data[4(16*yInPic+xInPic-17)-2]=blue[colorChars.indexOf(sub)];
-outputCanvas.getContext('2d').putImageData(,xInPic,yInPic);
+outputCanvas.getContext('2d').putImageData(outputCanvas.getContext('2d').getImageData(0,0,outputCanvas.width,outputCanvas.height),xInPic,yInPic);
 }}
 },false);
 }
