@@ -79,8 +79,8 @@ var outputArray=outputString.match(/.{1,16}/g).reverse();
 var output=(reverseArray(rotateArray(outputArray))).join("");
 document.getElementById("output").innerHTML=':DCS<br>"'+output;
 var outputCanvas=document.getElementById('outputcanvas');
-var ctx=outputCanvas.getContext('2d');
-var imageData=ctx.getImageData(0,0,outputCanvas.width,outputCanvas.height);
+ctx=outputCanvas.getContext('2d');
+imageData=ctx.getImageData(0,0,outputCanvas.width,outputCanvas.height);
 var sub;
 var data=imageData.data;
 for(yInPic=1;yInPic<=16;yInPic++){
@@ -90,6 +90,6 @@ data[4*(16*yInPic+xInPic-17)]=red[colorChars.indexOf(sub)];
 data[4*(16*yInPic+xInPic-17)+1]=green[colorChars.indexOf(sub)];
 data[4*(16*yInPic+xInPic-17)+2]=blue[colorChars.indexOf(sub)];
 }}
-outputCanvas.getContext('2d').putImageData(imageData,0,0,0,0,16,16);
+ctx.putImageData(imageData,0,0,0,0,16,16);
 },false);
 }
