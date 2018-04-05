@@ -15,9 +15,9 @@ var reverse=function(str) {
     return str.split("").reverse().join("");
 }
 var colorStrings=["WHITE","BLUE","RED","BLACK","MAGENTA","GREEN","ORANGE","BROWN","NAVY","LTBLUE","YELLOW","WHITE","LTGRAY","MEDGRAY","GRAY","DARKGRAY","G","BLACK(H)","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","θ"];
-var red = [255,24,231,0,255,33,231,182,0,128,255,255,225,200,150,100,57,0,0,214,181,41,57,41,156,198,214,41,206,49,156,214,33,33,33,0,198];
-var green=[255,0,24,0,24,130,121,47,0,255,255,255,225,200,150,100,65,0,162,24,243,0,32,65,178,186,24,97,186,32,243,24,97,97,97,32,121];
-var blue =[255,198,0,0,198,33,24,47,102,255,0,255,225,200,150,100,214,0,41,132,189,66,206,82,239,41,132,90,107,140,255,132,24,24,24,8,24];
+var red = [255,24,231,0,255,33,231,99,8,16,231,255,225,181,107,107,74,0,0,214,181,41,57,41,156,198,214,41,206,49,156,214,33,33,33,0,198];
+var green=[255,0,24,0,24,130,121,40,32,97,219,251,225,178,105,73,73,0,162,24,243,0,32,65,178,186,24,97,186,32,243,24,97,97,97,32,121];
+var blue =[255,198,0,0,198,33,24,8,74,156,49,255,225,173,90,82,82,0,41,132,189,66,206,82,239,41,132,90,107,140,255,132,24,24,24,8,24];
 var colorChars=["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","θ"];
 var reverseArray=function(array){
 return [reverse(array[0]),reverse(array[1]),reverse(array[2]),reverse(array[3]),reverse(array[4]),reverse(array[5]),reverse(array[6]),reverse(array[7]),reverse(array[8]),reverse(array[9]),reverse(array[10]),reverse(array[11]),reverse(array[12]),reverse(array[13]),reverse(array[14]),reverse(array[15])];
@@ -80,8 +80,9 @@ var output=(reverseArray(rotateArray(outputArray))).join("");
 document.getElementById("output").innerHTML=':DCS<br>"'+output;
 var outputCanvas=document.getElementById('outputcanvas');
 var ctx=outputCanvas.getContext('2d');
+var imageData=ctx.getImageData(0,0,outputCanvas.width,outputCanvas.height);
 var sub;
-var data=ctx.getImageData(0,0,outputCanvas.width,outputCanvas.height).data;
+var data=imageData.data;
 for(yInPic=1;yInPic<=16;yInPic++){
 for(xInPic=1;xInPic<=16;xInPic++){
 sub=output.substring(16*yInPic+xInPic-17,16*yInPic+xInPic-16);
@@ -89,6 +90,6 @@ data[4*(16*yInPic+xInPic-17)]=red[colorChars.indexOf(sub)];
 data[4*(16*yInPic+xInPic-17)+1]=green[colorChars.indexOf(sub)];
 data[4*(16*yInPic+xInPic-17)+2]=blue[colorChars.indexOf(sub)];
 }}
-ctx.putImageData(ctx.getImageData(0,0,outputCanvas.width,outputCanvas.height),0,0);
+ctx.putImageData(imageData,0,0);
 },false);
 }
