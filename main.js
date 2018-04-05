@@ -90,6 +90,7 @@ sub=output.substring(16*yInPic+xInPic-17,16*yInPic+xInPic-16);
 data[4*(16*yInPic+xInPic-17)]=red[colorChars.indexOf(sub)];
 data[4*(16*yInPic+xInPic-17)+1]=green[colorChars.indexOf(sub)];
 data[4*(16*yInPic+xInPic-17)+2]=blue[colorChars.indexOf(sub)];
+data[4*(16*yInPic+xInPic-17)+3]=1;
 }}
 ctx.putImageData(imageData,0,0,0,0,16,16);
 },false);
