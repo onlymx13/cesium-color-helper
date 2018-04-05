@@ -90,6 +90,6 @@ data[4*(16*yInPic+xInPic-17)]=red[colorChars.indexOf(sub)];
 data[4*(16*yInPic+xInPic-17)+1]=green[colorChars.indexOf(sub)];
 data[4*(16*yInPic+xInPic-17)+2]=blue[colorChars.indexOf(sub)];
 }}
-outputCanvas.getContext('2d').putImageData(imageData,0,0);
+outputCanvas.getContext('2d').putImageData(imageData,0,0,0,0,16,16);
 },false);
 }
