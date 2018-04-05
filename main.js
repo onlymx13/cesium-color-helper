@@ -64,8 +64,8 @@ var context = mycanvas.getContext('2d');
 context.drawImage(img, 0, 0, img.width, img.height);
 //Read each pixel and make that an array
 //Pixel1=[r1,g1,b1,a1]...
-for(var xInPic=1;xInPic<=16;xInPic++){
-	for(var yInPic=1;yInPic<=16;yInPic++){
+for(var xInPic=0;xInPic<16;xInPic++){
+	for(var yInPic=0;yInPic<16;yInPic++){
 		var pixelData = context.getImageData(xInPic, yInPic, 1, 1).data;
 		//Now do red-r1:
 		var redDiffs=red.map(x => Math.abs(x-pixelData[0]));
