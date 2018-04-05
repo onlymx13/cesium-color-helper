@@ -1,4 +1,5 @@
- var add3Arrays=function(array1,array2,array3){
+var imageData;
+var add3Arrays=function(array1,array2,array3){
 	var sum=new Array(array1.length);
 for(var i=0;i<array1.length;i++){
 	sum[i]=array1[i]+array2[i];
