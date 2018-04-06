@@ -17,6 +17,7 @@ function dropHandler(ev){
         fileTransferred = ev.dataTransfer.files[0];
         img.src = URL.createObjectURL(ev.dataTransfer.files[0]);
     }
+    mainBody();
     ev.dataTransfer.items.clear();
     ev.dataTransfer.clearData();
     removeDragData(ev);
