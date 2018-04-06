@@ -49,7 +49,7 @@ var setup = function() {
         div.style.visibility = "visible";
         var node = document.createTextNode(colorStrings[i]);
         div.appendChild(node);
-        document.body.insertAfter(div, document.getElementById('myImage'));
+        document.body.insertBefore(div, document.getElementById('wrapper'));
     }
 }
 var main = function() {
