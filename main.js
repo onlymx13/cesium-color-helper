@@ -4,6 +4,20 @@ var outputCanvas;
 var red;
 var green;
 var blue;
+var fileTransferred;
+
+function dropHandler(ev) = {
+    ev.preventDefault();
+    if (ev.dataTransfer.items) {
+        fileTransferred = ev.dataTransfer.items[0];
+    } else {
+        fileTransferred = ev.dataTransfer.files[0];
+    }
+    var
+        ev.dataTransfer.items.clear();
+    ev.dataTransfer.clearData();
+    removeDragData(ev);
+}
 var add3Arrays = function(array1, array2, array3) {
     var sum = new Array(array1.length);
     for (i = 0; i < array1.length; i++) {
@@ -63,6 +77,10 @@ var main = function() {
         reader.readAsDataURL(file);
     }
     img.addEventListener("load", function() {
+        mainBody();
+    }, false);
+
+    function mainBody() = {
         var outputString = "";
         var redDiffs = new Array(256);
         var greenDiffs = new Array(256);
@@ -104,5 +122,5 @@ var main = function() {
                 ctx.putImageData(theData, xInPic, yInPic);
             }
         }
-    }, false);
+    }
 }
