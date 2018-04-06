@@ -7,47 +7,6 @@ var blue;
 var fileTransferred;
 var img;
 function mainBody() {
-    var outputString = "";
-    var redDiffs = new Array(256);
-    var greenDiffs = new Array(256);
-    var blueDiffs = new Array(256);
-    var mycanvas = document.getElementById('mycanvas');
-    mycanvas.width = img.width;
-    mycanvas.height = img.height;
-    var context = mycanvas.getContext('2d');
-    context.drawImage(img, 0, 0, img.width, img.height);
-    //Read each pixel and make that an array
-    //Pixel1=[r1,g1,b1,a1]...
-    for (var xInPic = 0; xInPic < 16; xInPic++) {
-        for (var yInPic = 0; yInPic < 16; yInPic++) {
-            var pixelData = context.getImageData(xInPic, yInPic, 1, 1).data;
-            //Now do red-r1:
-            var redDiffs = red.map(x => Math.abs(x - pixelData[0]));
-            var greenDiffs = green.map(x => Math.abs(x - pixelData[1]));
-            var blueDiffs = blue.map(x => Math.abs(x - pixelData[2]));
-            var totalDiffs = add3Arrays(redDiffs, greenDiffs, blueDiffs);
-            outputString = outputString + colorChars[totalDiffs.indexOf(Math.min(...totalDiffs))];
-
-        }
-    }
-    var outputArray = outputString.match(/.{1,16}/g).reverse();
-    var output = (reverseArray(rotateArray(outputArray))).join("");
-    document.getElementById("output").innerHTML = ':DCS<br>"' + output;
-    outputCanvas = document.getElementById('outputcanvas');
-    ctx = outputCanvas.getContext('2d');
-    imageData = ctx.createImageData(16, 16);
-    var sub;
-    var theData = ctx.createImageData(1, 1);
-    for (yInPic = 1; yInPic <= 16; yInPic++) {
-        for (xInPic = 1; xInPic <= 16; xInPic++) {
-            sub = output.substring(16 * yInPic + xInPic - 17, 16 * yInPic + xInPic - 16);
-            theData.data[0] = red[colorChars.indexOf(sub)];
-            theData.data[1] = green[colorChars.indexOf(sub)];
-            theData.data[2] = blue[colorChars.indexOf(sub)];
-            theData.data[3] = 255;
-            ctx.putImageData(theData, xInPic, yInPic);
-        }
-    }
 }
 
 function dropHandler(ev) {
@@ -128,7 +87,47 @@ var main = function() {
         reader.readAsDataURL(file);
     }
     img.addEventListener("load", function() {
-        mainBody();
+        var outputString = "";
+    var redDiffs = new Array(256);
+    var greenDiffs = new Array(256);
+    var blueDiffs = new Array(256);
+    var mycanvas = document.getElementById('mycanvas');
+    mycanvas.width = img.width;
+    mycanvas.height = img.height;
+    var context = mycanvas.getContext('2d');
+    context.drawImage(img, 0, 0, img.width, img.height);
+    //Read each pixel and make that an array
+    //Pixel1=[r1,g1,b1,a1]...
+    for (var xInPic = 0; xInPic < 16; xInPic++) {
+        for (var yInPic = 0; yInPic < 16; yInPic++) {
+            var pixelData = context.getImageData(xInPic, yInPic, 1, 1).data;
+            //Now do red-r1:
+            var redDiffs = red.map(x => Math.abs(x - pixelData[0]));
+            var greenDiffs = green.map(x => Math.abs(x - pixelData[1]));
+            var blueDiffs = blue.map(x => Math.abs(x - pixelData[2]));
+            var totalDiffs = add3Arrays(redDiffs, greenDiffs, blueDiffs);
+            outputString = outputString + colorChars[totalDiffs.indexOf(Math.min(...totalDiffs))];
+
+        }
+    }
+    var outputArray = outputString.match(/.{1,16}/g).reverse();
+    var output = (reverseArray(rotateArray(outputArray))).join("");
+    document.getElementById("output").innerHTML = ':DCS<br>"' + output;
+    outputCanvas = document.getElementById('outputcanvas');
+    ctx = outputCanvas.getContext('2d');
+    imageData = ctx.createImageData(16, 16);
+    var sub;
+    var theData = ctx.createImageData(1, 1);
+    for (yInPic = 1; yInPic <= 16; yInPic++) {
+        for (xInPic = 1; xInPic <= 16; xInPic++) {
+            sub = output.substring(16 * yInPic + xInPic - 17, 16 * yInPic + xInPic - 16);
+            theData.data[0] = red[colorChars.indexOf(sub)];
+            theData.data[1] = green[colorChars.indexOf(sub)];
+            theData.data[2] = blue[colorChars.indexOf(sub)];
+            theData.data[3] = 255;
+            ctx.putImageData(theData, xInPic, yInPic);
+        }
+    }
     }, false);
 
 
