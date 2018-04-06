@@ -6,7 +6,7 @@ var green;
 var blue;
 var fileTransferred;
 
-function dropHandler(ev) = {
+function dropHandler(ev){
     ev.preventDefault();
     if (ev.dataTransfer.items) {
         fileTransferred = ev.dataTransfer.items[0];
