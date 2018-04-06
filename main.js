@@ -5,16 +5,19 @@ var red;
 var green;
 var blue;
 var fileTransferred;
+var img;
 
 function dropHandler(ev){
     ev.preventDefault();
+    img=new Image();
     if (ev.dataTransfer.items) {
         fileTransferred = ev.dataTransfer.items[0];
+        img.src = URL.createObjectURL(ev.dataTransfer.items[0]);
     } else {
         fileTransferred = ev.dataTransfer.files[0];
+        img.src = URL.createObjectURL(ev.dataTransfer.files[0]);
     }
-    var
-        ev.dataTransfer.items.clear();
+    ev.dataTransfer.items.clear();
     ev.dataTransfer.clearData();
     removeDragData(ev);
 }
