@@ -83,7 +83,7 @@ var main = function() {
         mainBody();
     }, false);
 
-    function mainBody() = {
+    function mainBody(){
         var outputString = "";
         var redDiffs = new Array(256);
         var greenDiffs = new Array(256);
