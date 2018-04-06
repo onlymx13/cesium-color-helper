@@ -96,6 +96,7 @@ data[4*(16*yInPic+xInPic-17)+1]=green[colorChars.indexOf(sub)];
 data[4*(16*yInPic+xInPic-17)+2]=blue[colorChars.indexOf(sub)];
 data[4*(16*yInPic+xInPic-17)+3]=255;
 }}
+imageData.data=data;
 ctx.putImageData(imageData,0,0,0,0,16,16);
 },false);
 }
