@@ -87,6 +87,7 @@ outputCanvas=document.getElementById('outputcanvas');
 ctx=outputCanvas.getContext('2d');
 imageData=ctx.createImageData(16,16);
 var sub;
+	/*
 for(yInPic=1;yInPic<=16;yInPic++){
 for(xInPic=1;xInPic<=16;xInPic++){
 sub=output.substring(16*yInPic+xInPic-17,16*yInPic+xInPic-16);
@@ -95,6 +96,17 @@ imageData.data[4*(16*yInPic+xInPic-17)+1]=green[colorChars.indexOf(sub)];
 imageData.data[4*(16*yInPic+xInPic-17)+2]=blue[colorChars.indexOf(sub)];
 imageData.data[4*(16*yInPic+xInPic-17)+3]=255;
 }}
-ctx.putImageData(imageData,0,0,0,0,16,16);
+*/
+var theData=ctx.createImageData(1,1);
+for(yInPic=1;yInPic<=16;yInPic++){
+for(xInPic=1;xInPic<=16;xInPic++){
+sub=output.substring(16*yInPic+xInPic-17,16*yInPic+xInPic-16);
+theData.data[0]=red[colorChars.indexOf(sub)];
+theData.data[1]=green[colorChars.indexOf(sub)];
+theData.data[2]=blue[colorChars.indexOf(sub)];
+theData.data[3]=255;
+ctx.putImageData(theData,xInPic,yInPic);
+}}
+//ctx.putImageData(imageData,0,0,0,0,16,16);
 },false);
 }
