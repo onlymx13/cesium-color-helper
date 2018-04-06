@@ -85,7 +85,7 @@ var output=(reverseArray(rotateArray(outputArray))).join("");
 document.getElementById("output").innerHTML=':DCS<br>"'+output;
 outputCanvas=document.getElementById('outputcanvas');
 ctx=outputCanvas.getContext('2d');
-imageData=ctx.getImageData(0,0,outputCanvas.width,outputCanvas.height);
+imageData=ctx.createImageData(16,16);
 var sub;
 var data=imageData.data;
 for(yInPic=1;yInPic<=16;yInPic++){
