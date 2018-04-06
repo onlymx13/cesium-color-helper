@@ -128,6 +128,6 @@ var setup = function() {
     }
 }
 var main = function() {
-    var img = document.getElementById('myImage');
+    img = document.getElementById('myImage');
     mainBody();
 }
