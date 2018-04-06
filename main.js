@@ -65,7 +65,7 @@ function dropHandler(ev) {
     img = new Image();
     if (ev.dataTransfer.items) {
         fileTransferred = ev.dataTransfer.items[0];
-        img.src = window.URL.createObjectURL(fileTransferred);
+        img.src = window.URL.createObjectURL(ev.dataTransfer.items[0]);
     } else {
         fileTransferred = ev.dataTransfer.files[0];
         img.src = window.URL.createObjectURL(fileTransferred);
