@@ -55,11 +55,11 @@ function dropHandler(ev) {
     ev.preventDefault();
     img = new Image();
     if (ev.dataTransfer.items) {
-        fileTransferred = ev.dataTransfer.items[0];
-        img.src = URL.createObjectURL(ev.dataTransfer.items[0]);
+        fileTransferred = ev.dataTransfer.items[0].getAsFile();
+        img.src = URL.createObjectURL(fileTransferred);
     } else {
-        fileTransferred = ev.dataTransfer.files[0];
-        img.src = URL.createObjectURL(ev.dataTransfer.files[0]);
+        fileTransferred = ev.dataTransfer.files[0].getAsFile();
+        img.src = URL.createObjectURL(fileTransferred);
     }
     mainBody();
     ev.dataTransfer.items.clear();
