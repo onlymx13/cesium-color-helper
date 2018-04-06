@@ -106,6 +106,7 @@ theData.data[1]=green[colorChars.indexOf(sub)];
 theData.data[2]=blue[colorChars.indexOf(sub)];
 theData.data[3]=255;
 ctx.putImageData(theData,xInPic,yInPic);
+ctx.scale(3,3);
 }}
 //ctx.putImageData(imageData,0,0,0,0,16,16);
 },false);
