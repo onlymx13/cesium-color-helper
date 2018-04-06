@@ -6,7 +6,6 @@ var green;
 var blue;
 var fileTransferred;
 var img;
-
 function mainBody() {
     var outputString = "";
     var redDiffs = new Array(256);
@@ -14,7 +13,7 @@ function mainBody() {
     var blueDiffs = new Array(256);
     var mycanvas = document.getElementById('mycanvas');
     mycanvas.width = img.width;
-    mycanvas.height = img.height
+    mycanvas.height = img.height;
     var context = mycanvas.getContext('2d');
     context.drawImage(img, 0, 0, img.width, img.height);
     //Read each pixel and make that an array
@@ -55,10 +54,10 @@ function dropHandler(ev) {
     ev.preventDefault();
     img = new Image();
     if (ev.dataTransfer.items) {
-        fileTransferred = ev.dataTransfer.items[0].getAsFile();
+        fileTransferred = ev.dataTransfer.items[0];
         img.src = URL.createObjectURL(fileTransferred);
     } else {
-        fileTransferred = ev.dataTransfer.files[0].getAsFile();
+        fileTransferred = ev.dataTransfer.files[0];
         img.src = URL.createObjectURL(fileTransferred);
     }
     mainBody();
