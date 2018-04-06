@@ -39,7 +39,7 @@ var rotateArray = function(array) {
 }
 var setup = function() {
     for (var i = 0; i < colorChars.length; i++) {
-        var div = document.getElementById("div" + (i + 1).toString());
+        var div = document.createElement('div');
         div.style.width = "100px";
         div.style.height = "50px";
         div.style.backgroundColor = "rgb(" + red[i].toString() + "," + green[i].toString() + "," + blue[i].toString() + ")";
