@@ -1,11 +1,12 @@
 var imageData;
+var i;
 var outputCanvas;
 var red;
 var green;
 var blue;
 var add3Arrays = function(array1, array2, array3) {
     var sum = new Array(array1.length);
-    for (var i = 0; i < array1.length; i++) {
+    for (i = 0; i < array1.length; i++) {
         sum[i] = array1[i] + array2[i];
     }
     for (i = 0; i < array3.length; i++) {
@@ -32,20 +33,22 @@ var rotateArray = function(array) {
     var substr = function(str, pos) {
         return str.match(/./g)[pos];
     }
-    for (var i = 0; i < 16; i++) {
+    for (i = 0; i < 16; i++) {
         newOutputArray[i] = substr(array[0], i) + substr(array[1], i) + substr(array[2], i) + substr(array[3], i) + substr(array[4], i) + substr(array[5], i) + substr(array[6], i) + substr(array[7], i) + substr(array[8], i) + substr(array[9], i) + substr(array[10], i) + substr(array[11], i) + substr(array[12], i) + substr(array[13], i) + substr(array[14], i) + substr(array[15], i);
     }
     return newOutputArray;
 }
 var setup = function() {
-    for (var i = 0; i < colorChars.length; i++) {
-        var div = document.createElement('div');
+    var div;
+    for (i = 0; i < colorChars.length; i++) {
+        div = document.createElement('div');
         div.style.width = "100px";
         div.style.height = "50px";
         div.style.backgroundColor = "rgb(" + red[i].toString() + "," + green[i].toString() + "," + blue[i].toString() + ")";
         div.style.display = "inline";
         div.style.visibility = "visible";
-        div.innerHTML = colorStrings[i];
+        var node=document.createTextNode(colorStrings[i]);
+        div.appendChild(node);
     }
 }
 var main = function() {
