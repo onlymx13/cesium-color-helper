@@ -65,15 +65,15 @@ function dropHandler(ev) {
     img = new Image();
     if (ev.dataTransfer.items) {
         fileTransferred = ev.dataTransfer.items[0];
-        img.src = URL.createObjectURL(fileTransferred);
+        img.src = window.URL.createObjectURL(fileTransferred);
     } else {
         fileTransferred = ev.dataTransfer.files[0];
-        img.src = URL.createObjectURL(fileTransferred);
+        img.src = window.URL.createObjectURL(fileTransferred);
     }
     mainBody();
     ev.dataTransfer.items.clear();
     ev.dataTransfer.clearData();
-    URL.revokeObjectURL(img.src);
+    window.URL.revokeObjectURL(img.src);
 }
 
 function dragOverHandler(ev) {
