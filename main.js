@@ -47,8 +47,9 @@ var setup = function() {
         div.style.backgroundColor = "rgb(" + red[i].toString() + "," + green[i].toString() + "," + blue[i].toString() + ")";
         div.style.display = "inline";
         div.style.visibility = "visible";
-        var node=document.createTextNode(colorStrings[i]);
+        var node = document.createTextNode(colorStrings[i]);
         div.appendChild(node);
+        document.body.insertAfter(div, document.getElementById('myImage'));
     }
 }
 var main = function() {
