@@ -6,7 +6,10 @@
 </head>
 <body onload="setup()">
   <p style="word-wrap:break-word;"><strong>Cesium Color Helper</strong><br>This tool helps to convert pictures into text to use in TI-BASIC programs for Cesium, an assembly shell for the TI-84 Plus CE.</p>
-<input type="file" id="myFile" multiple size="50" onChange="main()">
+<div id="drop_zone" ondrop="dropHandler(event);">
+  <p>Drag one or more files to this Drop Zone ...</p>
+</div>
+  <input type="file" id="myFile" multiple size="50" onChange="main()">
 <img id="myImage" width="16px" height="16px"></img>
 <div style="display:none" id='wrapper'>
   <canvas id='mycanvas'>This won't work on your browser; get Chrome</canvas></div>
