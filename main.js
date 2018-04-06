@@ -7,9 +7,9 @@ var blue;
 var fileTransferred;
 var img;
 
-function dropHandler(ev){
+function dropHandler(ev) {
     ev.preventDefault();
-    img=new Image();
+    img = new Image();
     if (ev.dataTransfer.items) {
         fileTransferred = ev.dataTransfer.items[0];
         img.src = URL.createObjectURL(ev.dataTransfer.items[0]);
@@ -20,7 +20,10 @@ function dropHandler(ev){
     mainBody();
     ev.dataTransfer.items.clear();
     ev.dataTransfer.clearData();
-    removeDragData(ev);
+}
+
+function dragOverHandler(ev) {
+    ev.preventDefault();
 }
 var add3Arrays = function(array1, array2, array3) {
     var sum = new Array(array1.length);
@@ -84,7 +87,7 @@ var main = function() {
         mainBody();
     }, false);
 
-    function mainBody(){
+    function mainBody() {
         var outputString = "";
         var redDiffs = new Array(256);
         var greenDiffs = new Array(256);
