@@ -63,14 +63,8 @@ function mainBody() {
 
 function dropHandler(ev) {
     ev.preventDefault();
-    img = new Image();
-    if (ev.dataTransfer.items) {
-        fileTransferred = ev.dataTransfer.items[0];
-        img.src = window.URL.createObjectURL(ev.dataTransfer.items[0]);
-    } else {
-        fileTransferred = ev.dataTransfer.files[0];
-        img.src = window.URL.createObjectURL(fileTransferred);
-    }
+    fileTransferred = ev.dataTransfer.files[0];
+    img.src = window.URL.createObjectURL(fileTransferred);
     mainBody();
     ev.dataTransfer.items.clear();
     ev.dataTransfer.clearData();
