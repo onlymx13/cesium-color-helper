@@ -5,7 +5,7 @@ var red;
 var green;
 var blue;
 var fileTransferred;
-var img;
+var img=new Image();
 
 function mainBody() {
     var file = document.querySelector('input[type=file]').files[0];
