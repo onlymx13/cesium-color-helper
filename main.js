@@ -6,9 +6,10 @@ var green;
 var blue;
 var fileTransferred;
 var image = new Image();
-var img = document.getElementById('myImage');
-img.onload = function() {
-    function mainBody() {
+
+function mainBody() {
+    var img = document.getElementById('myImage');
+    img.onload = function() {
         var outputString = "";
         var redDiffs = new Array(256);
         var greenDiffs = new Array(256);
