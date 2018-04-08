@@ -8,6 +8,7 @@ var fileTransferred;
 var img=new Image();
 
 function mainBody() {
+    img = document.getElementById('myImage');
     img.addEventListener("load", function() {
         var outputString = "";
         var redDiffs = new Array(256);
@@ -115,8 +116,7 @@ var setup = function() {
     }
 }
 var main = function() {
-    img = document.getElementById('myImage');
-     var file = document.querySelector('input[type=file]').files[0];
+    var file = document.querySelector('input[type=file]').files[0];
     var reader = new FileReader();
     reader.addEventListener("load", function() {
         img.src = reader.result;
