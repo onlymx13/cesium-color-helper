@@ -6,6 +6,20 @@ var green;
 var blue;
 var fileTransferred;
 var image = new Image();
+var setup = function() {
+    var div;
+    for (i = 0; i < colorChars.length; i++) {
+        div = document.createElement('div');
+        div.style.width = "100px";
+        div.style.height = "50px";
+        div.style.backgroundColor = "rgb(" + red[i].toString() + "," + green[i].toString() + "," + blue[i].toString() + ")";
+        div.style.display = "inline";
+        div.style.visibility = "visible";
+        var node = document.createTextNode(colorStrings[i]);
+        div.appendChild(node);
+        document.body.insertBefore(div, document.getElementById('wrapper'));
+    }
+}
 
 function mainBody() {
     var img = document.getElementById('myImage');
@@ -99,20 +113,6 @@ function mainBody() {
             newOutputArray[i] = substr(array[0], i) + substr(array[1], i) + substr(array[2], i) + substr(array[3], i) + substr(array[4], i) + substr(array[5], i) + substr(array[6], i) + substr(array[7], i) + substr(array[8], i) + substr(array[9], i) + substr(array[10], i) + substr(array[11], i) + substr(array[12], i) + substr(array[13], i) + substr(array[14], i) + substr(array[15], i);
         }
         return newOutputArray;
-    }
-    var setup = function() {
-        var div;
-        for (i = 0; i < colorChars.length; i++) {
-            div = document.createElement('div');
-            div.style.width = "100px";
-            div.style.height = "50px";
-            div.style.backgroundColor = "rgb(" + red[i].toString() + "," + green[i].toString() + "," + blue[i].toString() + ")";
-            div.style.display = "inline";
-            div.style.visibility = "visible";
-            var node = document.createTextNode(colorStrings[i]);
-            div.appendChild(node);
-            document.body.insertBefore(div, document.getElementById('wrapper'));
-        }
     }
     var main = function() {
         var file = document.querySelector('input[type=file]').files[0];
