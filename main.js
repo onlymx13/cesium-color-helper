@@ -6,11 +6,12 @@ var green;
 var blue;
 var fileTransferred;
 var image = new Image();
-
+var img;
 function dropHandler(ev) {
     ev.preventDefault();
     fileTransferred = ev.dataTransfer.files[0];
     image.src = window.URL.createObjectURL(fileTransferred);
+    var img = document.getElementById('myImage');
     mainBody();
     ev.dataTransfer.items.clear();
     ev.dataTransfer.clearData();
@@ -70,7 +71,6 @@ var setup = function() {
 }
 
 function mainBody() {
-    var img = document.getElementById('myImage');
     img.onload = function() {
         var outputString = "";
         var redDiffs = new Array(256);
@@ -116,6 +116,7 @@ function mainBody() {
     }
 }
 var main = function() {
+    var img = document.getElementById('myImage');
     var file = document.querySelector('input[type=file]').files[0];
     var reader = new FileReader();
     reader.addEventListener("load", function() {
