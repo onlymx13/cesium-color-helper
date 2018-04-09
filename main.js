@@ -71,6 +71,7 @@ var setup = function() {
 }
 
 function mainBody() {
+    var img = document.getElementById('myImage');
     img.onload = function() {
         var outputString = "";
         var redDiffs = new Array(256);
