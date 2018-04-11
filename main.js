@@ -1,9 +1,6 @@
 var imageData;
 var i;
 var outputCanvas;
-var red;
-var green;
-var blue;
 var fileTransferred;
 var image = new Image();
 var img;
